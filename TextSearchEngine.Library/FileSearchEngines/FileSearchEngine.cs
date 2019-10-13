@@ -26,6 +26,11 @@ namespace TextSearchEngine.Library.FileSearchEngines
         {
             var fileRepresentations = fileProvider.GetFileRepresentationsFromDirectory(searchDirectory);
             consoleProvider.WriteLine($"There are {fileRepresentations.Count()} files in directory {searchDirectory}");
+            if (!fileRepresentations.Any())
+            {
+                consoleProvider.WriteLine($"Please specify a directory that has files");
+                return;
+            }
             while (true)
             {
                 consoleProvider.Write("enter the search term: ");
@@ -45,7 +50,7 @@ namespace TextSearchEngine.Library.FileSearchEngines
 
                 if (!searchedFiles.Any())
                 {
-                    consoleProvider.WriteLine("No text in the files matching the search term was found.");
+                    consoleProvider.WriteLine("No text in the files matching the search term were found.");
                     continue;
                 }
 
