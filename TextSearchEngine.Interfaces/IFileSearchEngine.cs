@@ -1,6 +1,7 @@
 ﻿namespace TextSearchEngine.Interfaces
 {
-    internal interface IFileSearchEngine
+    public interface IFileSearchEngine
     {
+        void StartEngine(string searchDirectory);
     }
 }

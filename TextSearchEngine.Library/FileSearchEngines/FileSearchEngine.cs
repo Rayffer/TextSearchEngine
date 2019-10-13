@@ -1,9 +1,10 @@
 ﻿using System.Linq;
 using TextSearchEngine.Interfaces;
+using Unity;
 
-namespace TextSearchEngine.Library.FileSearchEngine
+namespace TextSearchEngine.Library.FileSearchEngines
 {
-    public class FileSearchEngine
+    public class FileSearchEngine : IFileSearchEngine
     {
         private readonly IFileProvider fileProvider;
         private readonly IFileTextSearcher fileTextSearcher;
@@ -11,6 +12,7 @@ namespace TextSearchEngine.Library.FileSearchEngine
 
         private string exitString = "$end";
 
+        [InjectionConstructor]
         public FileSearchEngine(IFileProvider fileProvider,
             IFileTextSearcher fileTextSearcher,
             IConsoleProvider consoleProvider)
@@ -35,7 +37,7 @@ namespace TextSearchEngine.Library.FileSearchEngine
 
                 var searchedFiles =
                     fileRepresentations
-                    .Select(fileRepresentation => (fileName: fileRepresentation, occurrences: fileTextSearcher.SearchOccurrences(fileRepresentation.Contents, searchTerm)))
+                    .Select(fileRepresentation => (fileName: fileRepresentation.FileName, occurrences: fileTextSearcher.SearchOccurrences(fileRepresentation.Contents, searchTerm)))
                     .OrderByDescending(searchedFile => searchedFile.occurrences)
                     .Take(10)
                     .TakeWhile(searchedFile => searchedFile.occurrences > 0)

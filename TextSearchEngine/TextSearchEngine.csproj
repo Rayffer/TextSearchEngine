@@ -59,5 +59,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextSearchEngine.Interfaces\TextSearchEngine.Interfaces.csproj">
+      <Project>{00F30E45-BC52-45B3-B241-44C6B545A204}</Project>
+      <Name>TextSearchEngine.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextSearchEngine.Library\TextSearchEngine.Library.csproj">
+      <Project>{f59138cf-0c3f-41ab-ac05-bd6d66c2fb14}</Project>
+      <Name>TextSearchEngine.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
