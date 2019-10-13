@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigureUnityTest.cs" />
+    <Compile Include="FileSearchEngineTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
