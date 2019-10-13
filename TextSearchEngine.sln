@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextSearchEngine.Library", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextSearchEngine.Interfaces", "TextSearchEngine.Interfaces\TextSearchEngine.Interfaces.csproj", "{00F30E45-BC52-45B3-B241-44C6B545A204}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4213B496-D952-4F18-9AA7-F0A3B575A676}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextSearchEngine.UnitTest", "TextSearchEngine.UnitTest\TextSearchEngine.UnitTest.csproj", "{21EE91E1-770D-4F64-B3F1-4AB137AC7EF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +37,16 @@ Global
 		{00F30E45-BC52-45B3-B241-44C6B545A204}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00F30E45-BC52-45B3-B241-44C6B545A204}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00F30E45-BC52-45B3-B241-44C6B545A204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21EE91E1-770D-4F64-B3F1-4AB137AC7EF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21EE91E1-770D-4F64-B3F1-4AB137AC7EF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21EE91E1-770D-4F64-B3F1-4AB137AC7EF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21EE91E1-770D-4F64-B3F1-4AB137AC7EF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{21EE91E1-770D-4F64-B3F1-4AB137AC7EF1} = {4213B496-D952-4F18-9AA7-F0A3B575A676}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D31987A1-26F2-4708-8524-A98E9D3A7917}
