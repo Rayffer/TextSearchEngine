@@ -12,8 +12,16 @@ using Unity;
 
 namespace TextSearchEngine.Library.Unity
 {
+    /// <summary>
+    /// This class intends to expose a method which fills the container provided as a parameter with all of the dependencies
+    /// that this class declares
+    /// </summary>
     public static class ConfigureUnity
     {
+        /// <summary>
+        /// Registers all the dependencies this method declares in the container passed as the parameter of the method
+        /// </summary>
+        /// <param name="unityContainer">The container in which to declare dependencies</param>
         public static void ConfigureContainer(IUnityContainer unityContainer)
         {
             unityContainer.RegisterType<IConsoleProvider, SystemConsoleProvider>();

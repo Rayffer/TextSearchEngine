@@ -4,13 +4,19 @@ using Unity;
 
 namespace TextSearchEngine.Library.FileSearchEngines
 {
+    /// <summary>
+    /// An engine that given a directory, allows to perform any amount of text searchs within the text of all the files inside it
+    /// </summary>
     public class FileSearchEngine : IFileSearchEngine
     {
         private readonly IFileProvider fileProvider;
         private readonly IFileTextSearcher fileTextSearcher;
         private readonly IConsoleProvider consoleProvider;
 
-        private string exitString = "$end";
+        /// <summary>
+        /// A command that signals the engine to stop and end its execution
+        /// </summary>
+        private readonly string exitString = "$end";
 
         [InjectionConstructor]
         public FileSearchEngine(IFileProvider fileProvider,
@@ -22,6 +28,11 @@ namespace TextSearchEngine.Library.FileSearchEngines
             this.consoleProvider = consoleProvider;
         }
 
+        /// <summary>
+        /// Starts the search engine in the directory specified by the <paramref name="searchDirectory"/> parameter and waits for user input.
+        /// To stop the engine, type $end
+        /// </summary>
+        /// <param name="searchDirectory">The directory in which to perform the searchs</param>
         public void StartEngine(string searchDirectory)
         {
             var fileRepresentations = fileProvider.GetFileRepresentationsFromDirectory(searchDirectory);
